@@ -1,3 +1,4 @@
+package week5;
 /******************************************************************************
  *  Compilation:  javac NearestNeighborVisualizer.java
  *  Execution:    java NearestNeighborVisualizer input.txt

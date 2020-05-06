@@ -1,3 +1,4 @@
+package week5;
 /******************************************************************************
  *  Compilation:  javac RangeSearchVisualizer.java
  *  Execution:    java RangeSearchVisualizer input.txt
