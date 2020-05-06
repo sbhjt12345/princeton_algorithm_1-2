@@ -8,7 +8,7 @@ import edu.princeton.cs.algs4.SET;
 
 
 public class PointSET {
-	SET<Point2D> pointSet;
+	private SET<Point2D> pointSet;
 	public PointSET(){
 		// construct an empty set of points 
 		pointSet = new SET<>();
@@ -54,16 +54,20 @@ public class PointSET {
 		}
 		return res;
 	}
+	
 	public Point2D nearest(Point2D p){
 		// a nearest neighbor in the set to point p; null if the set is empty 
 		if (p==null) throw new IllegalArgumentException();
 		Iterator<Point2D> iterator = pointSet.iterator();
-		double minDis = Double.MAX_VALUE;
+		double minDis = Double.POSITIVE_INFINITY;
 		Point2D res = null;
 		while (iterator.hasNext()){
 			Point2D pt = iterator.next();
-			double dis = p.distanceSquaredTo(pt);
-			if (dis < minDis) res = pt;
+			double dis = p.distanceTo(pt);
+			if (dis < minDis) {
+				res = pt;
+				minDis = dis;
+			}
 		}
 		return res;
 	}

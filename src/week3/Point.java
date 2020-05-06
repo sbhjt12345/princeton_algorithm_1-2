@@ -1,3 +1,4 @@
+package week3;
 /******************************************************************************
  *  Compilation:  javac Point.java
  *  Execution:    java Point

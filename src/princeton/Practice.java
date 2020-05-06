@@ -30,7 +30,7 @@ public class Practice {
 
 	public int[] sortColors(int[] A){
 		int lo = 0, hi = A.length-1, i=0;
-		while (i<hi){
+		while (i<=hi){
 			if (A[i]==2){
 				swap(A,i,hi--);
 			}
@@ -103,28 +103,33 @@ public class Practice {
 		System.out.println(p.findMedianSortedArrays(a, b));
 	}
 
-	public int[] merge(){
-		int[] aux = new int[left.length+right.length];
-		int i = 0, j=0;
-		while (i<left.length || j<right.length){
-
+	public void merge(int[] A, int[] aux, int lo, int mid, int hi){
+		for (int i=lo;i<=hi;i++){
+			aux[i] = A[i];
 		}
+		int i=lo,j=mid+1;
+		for (int k=lo;k<=hi;k++){
+			if (i>mid) A[k] = aux[j++];
+			if (j>hi) A[k] = aux[i++];
+			if (aux[i]>aux[j]) A[k] = aux[j++];
+			if (aux[i]<aux[j]) A[k] = aux[i++];
+ 		}
 	}
 
-	public int[] mergeSort(int[] A){
-		if (A.length==0) return A;
+	public void mergeSort(int[] A){
 		int lo = 0, hi = A.length-1;
 		int[] aux= new int[A.length];
-		return helper(A,aux,lo,hi);
+		helper(A,aux,lo,hi);
 	}
 
-	public int[] helper(int[] A, int[] aux, int lo, int hi){
+	public void helper(int[] A, int[] aux, int lo, int hi){
 		if (lo<hi){
 			int mid = lo + (hi-lo)/2;
-			int[] left = helper(A,lo,mid);
-			int[] right = helper(A,mid+1,hi);
-			return merge(left,right,lo,mid+1);
+			helper(A,aux,lo,mid);
+			helper(A,aux,mid+1,hi);
+			merge(A,aux,lo,mid,hi);
 		}
+		return;
 	}
 
 
