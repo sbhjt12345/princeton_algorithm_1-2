@@ -96,12 +96,12 @@ public class Practice {
 		}	
 	}
 
-	public static void main(String[] args){
-		int[] a = new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22};
-		int[] b = new int[]{0,6};
-		Practice p = new Practice();
-		System.out.println(p.findMedianSortedArrays(a, b));
-	}
+//	public static void main(String[] args){
+//		int[] a = new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22};
+//		int[] b = new int[]{0,6};
+//		Practice p = new Practice();
+//		System.out.println(p.findMedianSortedArrays(a, b));
+//	}
 
 	public void merge(int[] A, int[] aux, int lo, int mid, int hi){
 		for (int i=lo;i<=hi;i++){
@@ -131,6 +131,8 @@ public class Practice {
 		}
 		return;
 	}
+	
+	
 
 
 

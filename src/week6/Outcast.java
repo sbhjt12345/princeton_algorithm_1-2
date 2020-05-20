@@ -1,3 +1,4 @@
+package week6;
 
 public class Outcast {
 	private final WordNet wordnet;
